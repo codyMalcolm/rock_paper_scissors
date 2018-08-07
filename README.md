@@ -21,6 +21,11 @@ To create a console-based game of Rock Paper Scissors, played against the comput
 1. Functions can be reworked if necessary.
 2. Additional helper functions can be used.
 
+##### Ambiguous
+
+1. No mention is given as to handle ties.
+2. No mention is given as to handle invalid input.
+
 #### Learning Objectives
 
 To demonstrate understanding of functions/methods, using built in methods/libraries (`Math.rand()`), control flow, basic syntax, and a bit of data validation. Get additional practice with Git and GitHub.
@@ -29,7 +34,7 @@ To demonstrate understanding of functions/methods, using built in methods/librar
 
 #### Preliminary Thoughts
 
-I am already proficient with all of the learning objectives of this project in several programming languages, including Javascript. The only new method I will use is `prompt()`. Rock Paper Scissors is a very common beginner program. It's highly likely this project will take less time to code than to write the README, but that's okay because the process of Git, GitHub, and external documentation (eg. this document) is valuable. I'm going to pay extra attention to adhering to a professional workflow for this project. Also, this application will be more interesting once it is updated with a UI as a later project. 
+I am already proficient with all of the learning objectives of this project in several programming languages, including Javascript. The only new method I will use is `prompt()`. Rock Paper Scissors is a very common beginner program. It's highly likely this project will take less time to code than to write the README, but that's okay because the process of Git, GitHub, and external documentation (eg. this document) is valuable. I'm going to pay extra attention to adhering to a professional workflow for this project. Also, this application will be more interesting once it is updated with a UI as a later project.
 
 #### Final Thoughts
 
