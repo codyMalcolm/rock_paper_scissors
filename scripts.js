@@ -16,20 +16,17 @@ function playRound(playerSelection, computerSelection) {
       `You Lose! Paper beats rock!`;
   }
 
-
   if (playerNorm === 'paper') {
     return computerSelection === 'rock' ?
       `You Win! Paper beats rock!` :
       `You Lose! Scissors beats paper!`;
   }
 
-  
   if (playerNorm === 'scissors') {
     return computerSelection === 'paper' ?
       `You Win! Scissors beats paper!` :
       `You Lose! Rock beats scissors!`;
   }
 
-
-
+  return `Entry invalid!`;
 }
