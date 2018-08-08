@@ -55,7 +55,7 @@ I have a fair bit of experience with DOM manipulation so this should be straight
 
 #### V2 Final Thoughts
 
-To be completed upon project completion.
+I missed an opportunity for a helper function in V1. I left the data validation in, so if one messes with the text of one of the boxes in Dev Tools, it won't break the program. All in all, this refactor was straightforward and there were no surprises. I learned that there is no way to modify the radius of a focus outline, so that's unfortunate. I left the outline in anyway, because accessability.
 
 ## Miscellaneous
 
