@@ -1,4 +1,17 @@
-function game() {
+const btns = document.querySelectorAll('.btn');
+const output = document.querySelector('.output');
+
+let playerScore = 0;
+let computerScore = 0;
+let ties = 0;
+let gameOver = false;
+
+btns.forEach(b => {
+  b.addEventListener('click', game);
+})
+
+function game(e) {
+  if (gameOver) return;
   function computerPlay() {
     const arr = ["rock", "paper", "scissors"]
     const index = Math.floor(Math.random()*3);
@@ -30,36 +43,42 @@ function game() {
 
     return `Entry invalid! Please use "rock", "paper", or "scissors"!`;
   }
-  function getInput() {
-    return window.prompt("Rock, paper, or scissors?", "rock");
-  }
-
-  let playerScore = 0;
-  let computerScore = 0;
-
-  for (let i = 1; i <= 5; i++) {
-    const playerSelection = getInput();
-    const computerSelection = computerPlay();
-    const result = playRound(playerSelection, computerSelection);
-    const winner = result.split(' ')[1];
-
-    console.log(result);
-
+  function updateScore(winner) {
     switch (winner) {
       case "Win!":
-        playerScore++;
+        output.querySelector('.p-score').textContent = `Player score: ${++playerScore}`;
         break;
       case "Lose!":
-        computerScore++;
+        output.querySelector('.c-score').textContent = `Computer score: ${++computerScore}`;
         break;
-      case "Tie!": case "invalid!":
-        i--;
+      case "Tie!":
+        output.querySelector('.ties').textContent = `Ties: ${++ties}`;
         break;
     }
   }
+  function checkForWinner() {
+    if (playerScore === 5) {
+      output.querySelector('.final').textContent = 'Congratulations! You win!';
+      output.querySelector('.final').style.visibility = 'visible';
+      gameOver = true;
+    }
+    if (computerScore === 5) {
+      output.querySelector('.final').textContent = 'Computer wins! Better luck next time!';
+      output.querySelector('.final').style.visibility = 'visible';
+      gameOver = true;
+    }
+  }
 
-  const results = playerScore > computerScore ? 'You win!' : 'Computer wins!';
-  console.log(`${results} You won ${playerScore} matches and the computer won ${computerScore} matches!`);
+  const playerSelection = e.target.textContent;
+  const computerSelection = computerPlay();
+
+  const result = playRound(playerSelection, computerSelection);
+  const winner = result.split(' ')[1];
+
+  updateScore(winner);
+
+  output.querySelector('.result').textContent = result;
+  output.querySelector('.played').textContent = `Games played: ${playerScore+computerScore+ties}`;
+
+  checkForWinner();
 }
-
-game();
